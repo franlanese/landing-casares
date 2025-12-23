@@ -22,7 +22,7 @@ export default function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="#" className="flex items-center gap-2">
           <Mountain className="h-6 w-6 text-primary" />
-          <span className="font-bold text-lg text-primary">Contador Argentino</span>
+          <span className="font-bold text-lg text-primary">Casares Consultores</span>
         </Link>
         <nav className="hidden md:flex gap-6">
           {navLinks.map((link) => (
@@ -47,7 +47,7 @@ export default function Header() {
               <div className="border-b pb-4">
                 <Link href="#" className="flex items-center gap-2 text-lg font-semibold">
                   <Mountain className="h-6 w-6 text-primary" />
-                  <span>Contador Argentino</span>
+                  <span>Casares Consultores</span>
                 </Link>
               </div>
               <nav className="grid gap-4 py-6 text-lg font-medium">

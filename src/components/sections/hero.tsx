@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="relative z-10 container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto space-y-6">
           <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight font-headline">
-            Soluciones Contables Profesionales en Argentina
+            Soluciones Contables Profesionales en Rosario
           </h1>
           <p className="text-lg md:text-xl text-gray-200">
             Navegue el complejo sistema tributario argentino con confianza. Ofrecemos servicios expertos para individuos y empresas.

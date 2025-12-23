@@ -1,4 +1,4 @@
-# **App Name**: Contador Argentino
+# **App Name**: landing casares
 
 ## Core Features:
 

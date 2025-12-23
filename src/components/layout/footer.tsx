@@ -8,9 +8,9 @@ export default function Footer() {
         <div className="flex flex-col items-start gap-4">
           <Link href="#" className="flex items-center gap-2">
             <Mountain className="h-6 w-6 text-primary" />
-            <span className="font-bold text-lg text-primary">Contador Argentino</span>
+            <span className="font-bold text-lg text-primary">Casares Consultores</span>
           </Link>
-          <p className="text-muted-foreground">© {new Date().getFullYear()} Contador Argentino. Todos los derechos reservados.</p>
+          <p className="text-muted-foreground">© {new Date().getFullYear()} Zonodev. Todos los derechos reservados.</p>
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
@@ -32,9 +32,9 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold mb-2 text-foreground">Contacto</h4>
           <address className="not-italic text-muted-foreground space-y-1">
-            <p>Av. Corrientes 1234, CABA, Argentina</p>
-            <p>(011) 4567-8901</p>
-            <p>contacto@contadorargentino.com.ar</p>
+            <p>1 de Mayo 3458 - Rosario, Santa Fe</p>
+            <p>+543414625691</p>
+            <p>contacto@casaresconsultores.com.ar</p>
           </address>
         </div>
       </div>

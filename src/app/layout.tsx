@@ -5,7 +5,7 @@ import Chatbot from '@/components/chatbot';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Contador Argentino',
+  title: 'Casares Consultores',
   description: 'Estudio contable profesional en Argentina. Ofrecemos servicios de impuestos, auditoría y planificación financiera.',
 };
 

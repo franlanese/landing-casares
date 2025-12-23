@@ -11,9 +11,9 @@ import {
 
 const testimonials = [
     {
-        quote: "El equipo de Contador Argentino transformó nuestra gestión financiera. Su profesionalismo y conocimiento son invaluables. Altamente recomendados.",
-        name: "Ana S.",
-        company: "CEO de TechStark S.A."
+        quote: "El equipo de Casares transformó nuestra gestión financiera. Su profesionalismo y conocimiento son invaluables. Altamente recomendados.",
+        name: "Javier V.",
+        company: "Socio fundador de Zonodev.ar"
     },
     {
         quote: "Como monotributista, la liquidación de impuestos siempre fue un dolor de cabeza. Gracias a ellos, ahora es un proceso simple y transparente.",
