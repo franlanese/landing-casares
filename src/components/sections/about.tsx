@@ -5,16 +5,16 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 const teamMembers = [
   {
     id: "team-member-1",
-    name: "Dr. Juan Pérez",
-    title: "Contador Público, Socio Fundador",
-    bio: "Con más de 20 años de experiencia, Juan se especializa en derecho tributario y planificación fiscal para grandes empresas.",
+    name: "Dra. Juana Pérez",
+    title: "Contadora Pública, Socia Fundadora",
+    bio: "Con más de 15 años de experiencia, Juana se especializa en derecho tributario y planificación fiscal para grandes empresas.",
     initials: "JP",
   },
   {
     id: "team-member-2",
-    name: "Lic. María García",
-    title: "Contadora Pública, Socia",
-    bio: "María lidera nuestro departamento de auditoría, con una vasta experiencia en normas internacionales de información financiera (NIIF).",
+    name: "Lic. Martin García",
+    title: "Contador Público, Socio",
+    bio: "Martin lidera nuestro departamento de auditoría, con una vasta experiencia en normas internacionales de información financiera (NIIF).",
     initials: "MG",
   },
   {
@@ -43,7 +43,7 @@ export default function About() {
               <Card key={member.name} className="text-center border-0 shadow-none">
                 <CardHeader className="items-center p-0">
                   <Avatar className="w-32 h-32 mb-4">
-                    {memberImage && <AvatarImage src={memberImage.imageUrl} alt={`Retrato de ${member.name}`} data-ai-hint={memberImage.imageHint} />}
+                    {memberImage && <AvatarImage src={memberImage.imageUrl} alt={`Retrato de ${member.name}`} className="object-cover object-[50%_25%]" data-ai-hint={memberImage.imageHint} />}
                     <AvatarFallback>{member.initials}</AvatarFallback>
                   </Avatar>
                   <CardTitle className="text-xl">{member.name}</CardTitle>
