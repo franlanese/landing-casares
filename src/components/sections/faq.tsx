@@ -1,9 +1,11 @@
+'use client'
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { motion } from "framer-motion";
 
 const faqs = [
     {
@@ -26,6 +28,12 @@ const faqs = [
 
 export default function Faq() {
   return (
+    <motion.div
+      initial={{ opacity: 0, y: 80}}
+      whileInView={{ opacity: 1, y: 0}}
+      transition={{ duration: 0.6, ease: 'easeOut'}}
+      viewport={{ once: true, amount: 0.2}}
+    >
     <section id="faq" className="py-20 md:py-32 bg-card">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-2xl mx-auto mb-12">
@@ -48,5 +56,6 @@ export default function Faq() {
         </div>
       </div>
     </section>
+    </motion.div>
   );
 }

@@ -1,6 +1,8 @@
+'use client'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { motion } from 'framer-motion';
 
 const teamMembers = [
   {
@@ -28,35 +30,42 @@ const teamMembers = [
 
 export default function About() {
   return (
-    <section id="about" className="py-20 md:py-32 bg-card">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline">Conozca a Nuestro Equipo</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Profesionales dedicados y con la experiencia para guiarlo hacia el éxito financiero.
-          </p>
+    <motion.div
+        initial={{ opacity: 0, y: 80}}
+        whileInView={{ opacity: 1, y: 0}}
+        transition={{ duration: 0.6, ease: 'easeOut'}}
+        viewport={{ once: true, amount: 0.2}}
+    >
+      <section id="about" className="py-20 md:py-32 bg-card">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline">Conozca a Nuestro Equipo</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Profesionales dedicados y con la experiencia para guiarlo hacia el éxito financiero.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {teamMembers.map((member) => {
+              const memberImage = PlaceHolderImages.find(p => p.id === member.id);
+              return (
+                <Card key={member.name} className="text-center border-0 shadow-none">
+                  <CardHeader className="items-center p-0">
+                    <Avatar className="w-32 h-32 mb-4">
+                      {memberImage && <AvatarImage src={memberImage.imageUrl} alt={`Retrato de ${member.name}`} className="object-cover object-[50%_25%]" data-ai-hint={memberImage.imageHint} />}
+                      <AvatarFallback>{member.initials}</AvatarFallback>
+                    </Avatar>
+                    <CardTitle className="text-xl">{member.name}</CardTitle>
+                    <p className="text-sm text-accent font-semibold">{member.title}</p>
+                  </CardHeader>
+                  <CardContent className="mt-4 p-0">
+                    <p className="text-muted-foreground">{member.bio}</p>
+                  </CardContent>
+                </Card>
+              )
+            })}
+          </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {teamMembers.map((member) => {
-            const memberImage = PlaceHolderImages.find(p => p.id === member.id);
-            return (
-              <Card key={member.name} className="text-center border-0 shadow-none">
-                <CardHeader className="items-center p-0">
-                  <Avatar className="w-32 h-32 mb-4">
-                    {memberImage && <AvatarImage src={memberImage.imageUrl} alt={`Retrato de ${member.name}`} className="object-cover object-[50%_25%]" data-ai-hint={memberImage.imageHint} />}
-                    <AvatarFallback>{member.initials}</AvatarFallback>
-                  </Avatar>
-                  <CardTitle className="text-xl">{member.name}</CardTitle>
-                  <p className="text-sm text-accent font-semibold">{member.title}</p>
-                </CardHeader>
-                <CardContent className="mt-4 p-0">
-                  <p className="text-muted-foreground">{member.bio}</p>
-                </CardContent>
-              </Card>
-            )
-          })}
-        </div>
-      </div>
-    </section>
+      </section>
+    </motion.div>
   );
 }

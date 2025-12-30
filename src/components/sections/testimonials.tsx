@@ -8,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { motion } from "framer-motion";
 
 const testimonials = [
     {
@@ -35,42 +36,49 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 md:py-32 bg-background">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline">Lo que dicen nuestros clientes</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            La confianza y los resultados hablan por sí solos.
-          </p>
+    <motion.div
+      initial={{ opacity: 0, y: 80}}
+      whileInView={{ opacity: 1, y: 0}}
+      transition={{ duration: 0.6, ease: 'easeOut'}}
+      viewport={{ once: true, amount: 0.2}}
+    >
+      <section id="testimonials" className="py-20 md:py-32 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline">Lo que dicen nuestros clientes</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              La confianza y los resultados hablan por sí solos.
+            </p>
+          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full max-w-5xl mx-auto"
+          >
+            <CarouselContent>
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem key={index} className="md:basis-1/2">
+                  <div className="p-4 h-full">
+                    <Card className="h-full flex flex-col justify-between shadow-sm bg-card">
+                      <CardContent className="flex flex-col items-start gap-4 p-6">
+                        <p className="text-lg italic text-foreground">"{testimonial.quote}"</p>
+                        <div className="mt-4 text-right w-full">
+                          <p className="font-semibold text-primary">{testimonial.name}</p>
+                          <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
         </div>
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          className="w-full max-w-5xl mx-auto"
-        >
-          <CarouselContent>
-            {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="md:basis-1/2">
-                <div className="p-4 h-full">
-                  <Card className="h-full flex flex-col justify-between shadow-sm bg-card">
-                    <CardContent className="flex flex-col items-start gap-4 p-6">
-                      <p className="text-lg italic text-foreground">"{testimonial.quote}"</p>
-                      <div className="mt-4 text-right w-full">
-                        <p className="font-semibold text-primary">{testimonial.name}</p>
-                        <p className="text-sm text-muted-foreground">{testimonial.company}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
-        </Carousel>
-      </div>
-    </section>
+      </section>
+    </motion.div>
   );
 }

@@ -13,13 +13,13 @@ export default function Home() {
     <div className="flex flex-col min-h-dvh">
       <Header />
       <main className="flex-1">
-        <Hero />
-        <Services />
-        <Networking />
-        <About />
-        <Testimonials />
-        <Faq />
-        <Contact />
+          <Hero />
+          <Services />
+          <Networking />
+          <About />
+          <Testimonials />
+          <Faq />
+          <Contact />
       </main>
       <Footer />
     </div>

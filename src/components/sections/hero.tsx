@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-image');
