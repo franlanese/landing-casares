@@ -9,19 +9,19 @@
     {
       "id": "team-member-1",
       "description": "Professional headshot of a founding partner.",
-      "imageUrl": "https://images.pexels.com/photos/7490973/pexels-photo-7490973.jpeg",
+      "imageUrl": "/foto1.jpeg",
       "imageHint": "professional headshot"
     },
     {
       "id": "team-member-2",
       "description": "Professional headshot of a partner.",
-      "imageUrl": "https://images.pexels.com/photos/32976/pexels-photo.jpg",
+      "imageUrl": "/foto2.jpg",
       "imageHint": "professional headshot"
     },
     {
       "id": "team-member-3",
       "description": "Professional headshot of a SME specialist.",
-      "imageUrl": "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg",
+      "imageUrl": "/foto3.jpeg",
       "imageHint": "professional headshot"
     }
   ]
