@@ -2,7 +2,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { motion } from 'framer-motion';
 
 const teamMembers = [
   {
@@ -31,51 +30,20 @@ const teamMembers = [
 export default function About() {
   return (
     <section id="about" className="py-20 md:py-32 bg-card">
-      <motion.div
-        className="container mx-auto px-4 md:px-6"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={{
-          hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: 0.1
-            }
-          }
-        }}
-      >
+      <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold font-headline"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-            }}
-          >
+          <h2 className="text-3xl md:text-4xl font-bold font-headline">
             Conozca a Nuestro Equipo
-          </motion.h2>
-          <motion.p
-            className="mt-4 text-lg text-muted-foreground"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-            }}
-          >
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
             Profesionales dedicados y con la experiencia para guiarlo hacia el éxito financiero.
-          </motion.p>
+          </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {teamMembers.map((member) => {
             const memberImage = PlaceHolderImages.find(p => p.id === member.id);
             return (
-              <motion.div
-                key={member.name}
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-                }}
-              >
+              <div key={member.name}>
                 <Card className="text-center border-0 shadow-none h-full">
                   <CardHeader className="items-center p-0">
                     <Avatar className="w-32 h-32 mb-4">
@@ -89,11 +57,11 @@ export default function About() {
                     <p className="text-muted-foreground">{member.bio}</p>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             )
           })}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
