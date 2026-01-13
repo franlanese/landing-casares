@@ -3,14 +3,15 @@ import { Button } from '@/components/ui/button';
 import { Users, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import ConnextSlideshow from './connext-slideshow';
 
 export default function Networking() {
     return (
         <motion.div
-        initial={{ opacity: 0, y: 80}}
-        whileInView={{ opacity: 1, y: 0}}
-        transition={{ duration: 0.6, ease: 'easeOut'}}
-        viewport={{ once: true, amount: 0.2}}
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.2 }}
         >
             <section id="networking" className="py-20 md:py-32 bg-muted/30">
                 <div className="container mx-auto px-4 md:px-6">
@@ -37,20 +38,9 @@ export default function Networking() {
                         </div>
 
                         {/* Visual element or decoration */}
-                        <div className="flex-1 w-full max-w-md relative">
-                            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-2xl blur-2xl -z-10" />
-                            <div className="bg-background border rounded-2xl p-8 shadow-xl">
-                                <div className="space-y-4">
-                                    <div className="h-2 w-1/3 bg-muted rounded animate-pulse" />
-                                    <div className="h-2 w-2/3 bg-muted rounded animate-pulse" />
-                                    <div className="h-2 w-full bg-muted rounded animate-pulse" />
-                                    <div className="h-2 w-full bg-muted rounded animate-pulse" />
-                                    <div className="h-2 w-3/4 bg-muted rounded animate-pulse" />
-                                </div>
-                                <div className="mt-8 flex justify-end">
-                                    <div className="h-8 w-24 bg-primary/20 rounded animate-pulse" />
-                                </div>
-                            </div>
+                        <div className="flex-1 w-full max-w-md relative flex justify-center">
+                            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-full blur-3xl -z-10 opacity-70" />
+                            <ConnextSlideshow />
                         </div>
                     </div>
                 </div>
