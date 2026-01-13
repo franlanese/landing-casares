@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
         <div className="flex flex-col items-start gap-4">
           <Link href="#" className="flex items-center gap-2">
-            <Mountain className="h-6 w-6 text-primary" />
+          <img src={"/casares.png"} className="h-6 w-6 text-primary" />
             <span className="font-bold text-lg text-primary">Casares Consultores</span>
           </Link>
           <p className="text-muted-foreground">© {new Date().getFullYear()} Zonodev. Todos los derechos reservados.</p>
